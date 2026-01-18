@@ -182,8 +182,26 @@ http://localhost:8080/api/weather?date=2025-01-15&city=Tokyo → []
 3. В логах Сервиса A будут видны 3 повторные попытки.
 4. После неудачных попыток будет возвращен пустой массив `[]`.
 
-https://res.cloudinary.com/dlwg2gnxz/image/upload/v1762355799/acronis_bundle_banner_fl0jed.png
 
+## ТЕСТ: Проверка базового взаимодействия A → B
+Действия:
+В браузере откройте: http://localhost:8080/api/weather?date=2025-01-15&city=Moscow
 
+Что проверяем:
+В браузере: 24 записи в JSON формате
+Скришот логов: 
+![логи](./screenshoots/test1.png)
+
+## ТЕСТ: Проверка обработки ошибок и retry
+Действия:
+
+Остановите Сервис B (Ctrl+C в его терминале)
+В браузере откройте: http://localhost:8080/api/weather?date=2025-01-15&city=Moscow
+Подождите ~10 секунд
+Запустите Сервис B снова
+Обновите страницу в браузере
+
+Скришот логов: 
+![логи](./screenshoots/test2.png)
 
 
