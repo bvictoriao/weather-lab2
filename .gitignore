@@ -1,0 +1,6 @@
+target/
+.idea/
+*.iml
+weather_data.csv
+.DS_Store
+*.log
